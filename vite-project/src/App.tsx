@@ -5,6 +5,13 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [res, setRes] = useState<any>('No response yet')
+
+  const fetchData = async () => {
+    const response = await fetch('https://json');
+    const data = await response.json();
+    setRes(data);
+  }
 
   return (
     <>
@@ -21,6 +28,9 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <button onClick={fetchData}>
+          Api response is {res}
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -28,6 +38,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+        
     </>
   )
 }
