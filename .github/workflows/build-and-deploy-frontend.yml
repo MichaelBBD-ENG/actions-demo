@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Change this to your branch if it's not 'main'
+    paths:
+      - 'vite-project/**'  # Change this to the path of your frontend code
 
 defaults:
   run:
