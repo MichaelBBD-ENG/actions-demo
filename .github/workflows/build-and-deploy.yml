@@ -5,6 +5,10 @@ on:
     branches:
       - main  # Change this to your branch if it's not 'main'
 
+defaults:
+  run:
+    working-directory: vite-project
+
 jobs:
   build:
     runs-on: ubuntu-latest
